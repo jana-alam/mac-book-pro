@@ -21,52 +21,73 @@
       <section class="row">
         <div class="row col-lg-11 col-xl-9 mx-auto gx-5">
           <!-- Image Section Starts -->
-          <div class="col-md-5">
+          <div class="col-md-4">
             <img class="img-fluid" src="images/mac.png" alt="" />
           </div>
           <!-- Image Section Ends -->
           <!-- configuration section starts -->
-          <div class="col-md-7">
+          <div class="col-md-8">
             <!-- info section -->
             <div class="col-12">
               <h2>Customize your 2.6GHz 6-Core Processor With Apple Chip</h2>
               <p>
                 The Apple M1 chip gives the 13‑inch MacBook Pro speed and power
-                beyond belief. With up to 2.8x CPU performance. Up to 5x the
+                beyond belief. With up to 2.8x CPU performance.Up to 5x the
                 graphics speed. Our most advanced Neural Engine for up to 11x
                 faster machine learning. And up to 20 hours of battery life.
               </p>
             </div>
             <!-- memory configuration  -->
             <div class="col-12 mt-4">
-              <p class="mb-2 fw-bold">Memory</p>
-              <button class="btn btn-sm btn-outline-dark border-secondary">
+              <p class="mb-0 fw-bold">Memory</p>
+              <button
+                id="min-memory-button"
+                class="btn btn-sm btn-outline-dark border-secondary"
+              >
                 8GB Unified Memory
               </button>
-              <button class="btn btn-sm btn-outline-dark border-secondary">
+              <button
+                id="max-memory-button"
+                class="btn btn-sm btn-outline-dark border-secondary"
+              >
                 16GB Unified Memory
               </button>
             </div>
             <!-- Storage configuration  -->
-            <div class="col-12 mt-3">
-              <p class="mb-2 fw-bold">Storage</p>
-              <button class="btn btn-sm btn-outline-dark border-secondary">
+            <div class="col-12 mt-2">
+              <p class="mb-0 fw-bold">Storage</p>
+              <button
+                id="min-storage-button"
+                class="btn btn-sm btn-outline-dark border-secondary"
+              >
                 256GB SSD Storage
               </button>
-              <button class="btn btn-sm btn-outline-dark border-secondary">
+              <button
+                id="medium-storage-button"
+                class="btn btn-sm btn-outline-dark border-secondary"
+              >
                 512GB SSD Storage
               </button>
-              <button class="btn btn-sm btn-outline-dark border-secondary">
+              <button
+                id="max-storage-button"
+                class="btn btn-sm btn-outline-dark border-secondary"
+              >
                 1TB SSD Storage
               </button>
             </div>
             <!-- shipping configuration  -->
-            <div class="col-12 mt-3">
-              <p class="mb-2 fw-bold">Choose Your delivery Option</p>
-              <button class="btn btn-sm btn-outline-dark border-secondary">
+            <div class="col-12 mt-2">
+              <p class="mb-0 fw-bold">Choose Your delivery Option</p>
+              <button
+                id="free-delivery-button"
+                class="btn btn-sm btn-outline-dark border-secondary"
+              >
                 Wed, Aug 25 Free Delivery
               </button>
-              <button class="btn btn-sm btn-outline-dark border-secondary">
+              <button
+                id="express-delivery-button"
+                class="btn btn-sm btn-outline-dark border-secondary"
+              >
                 Fri, Aug 21 Delivery Cost $20
               </button>
             </div>
@@ -78,37 +99,61 @@
                   <tbody>
                     <tr>
                       <th>Best Price</th>
-                      <th>$<span>1299</span></th>
+                      <th>$<span id="base-cost">1299</span></th>
                     </tr>
                     <tr>
                       <th>Extra Memory Cost</th>
-                      <th>$<span>0</span></th>
+                      <th>$<span id="memory-cost">0</span></th>
                     </tr>
                     <tr>
                       <th>Extra Storage Cost</th>
-                      <th>$<span>0</span></th>
+                      <th>$<span id="storage-cost">0</span></th>
                     </tr>
                     <tr>
                       <th>Delivery Charge</th>
-                      <th>$<span>0</span></th>
+                      <th>$<span id="delivery-cost">0</span></th>
                     </tr>
                   </tbody>
                   <tfoot>
                     <th>Total Price</th>
-                    <th>$<span>0</span></th>
+                    <th>$<span id="total-cost">1299</span></th>
                   </tfoot>
                 </table>
               </div>
               <!-- Promo Code Section -->
               <div class="mt-3">
-                <p class="mb-1 fw-bold">Add Promo Code</p>
-                <div class="input-group mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Promo Code"
-                  />
-                  <button class="btn btn-danger" type="button">Apply</button>
+                <div id="promo-code">
+                  <p id="promo-text" class="mb-1 fw-bold">Add Promo Code</p>
+                  <div class="input-group mb-3">
+                    <input
+                      id="promo-code-input"
+                      type="text"
+                      class="form-control"
+                      placeholder="Promo Code"
+                    />
+                    <button
+                      id="promo-code-button"
+                      class="btn btn-danger"
+                      type="button"
+                    >
+                      Apply
+                    </button>
+                  </div>
+                </div>
+
+                <!-- alert section for not matches promo -->
+                <div
+                  id="promo-code-fail"
+                  class="alert alert-danger fw-bold d-none"
+                >
+                  Promo Code Don't Exist!
+                </div>
+                <!-- success message for matching promo -->
+                <div
+                  id="promo-code-success"
+                  class="alert alert-success fw-bold d-none"
+                >
+                  Promo Code Applied
                 </div>
               </div>
             </div>
@@ -117,7 +162,9 @@
           <!-- Grand Total Section Starts -->
           <div class="col-12">
             <hr />
-            <h1 class="text-center">Total: $1299</h1>
+            <h1 class="text-center">
+              Total: $<span id="grand-total-cost">1299</span>
+            </h1>
           </div>
           <!-- Grand Total Section Ends -->
         </div>
